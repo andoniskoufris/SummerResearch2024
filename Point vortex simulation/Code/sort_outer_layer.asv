@@ -1,0 +1,11 @@
+function positions_sorted = sort_outer_layer(positions, radius, tolerance)
+    
+    edge_vortices = identify_outer_layer(positions, radius, tolerance); % give this function the complex coordinates of the vortices and returns an array with just the vortices in the edge layer, sorted by 
+    
+    positions_sorted = zeros(1, size(positions,2)); % generates a row vector that will store the positions of the new vortex positions, the first entries of which will be the vortices on the outer layer so that we can easily find those vortices that are were originally in the outer layer and how they change over time
+    
+    positions_sorted(1, 1:size(array, 1)) = edge_vortices(:); 
+
+    perturbed_positions(1, size(array, 1)+1:size(perturbed_positions,2)) = positions((1-tolerance)*radius >= abs(positions(:)));
+
+end
